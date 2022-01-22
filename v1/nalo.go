@@ -110,6 +110,6 @@ func (n *Nalo) SendSMS(message, to, from string, delivery Delivery, messageType 
 	case "1026":
 		return nil, ErrInsufficientCreditReseller
 	default:
-		return nil, ErrUnknown
+		return nil, fmt.Errorf("%v: %s", ErrUnknown, b)
 	}
 }
