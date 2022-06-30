@@ -14,9 +14,9 @@ go get -u github.com/ankorgh/nalo
 
 ```go
 n := nalo.New(context.Background(), nalo.Credentials{
-		Username: "",
-		Password: "",
-	}, nil)
+  Username: "",
+  Password: "",
+}, nil)
 ```
 
 ### Get balance
@@ -34,7 +34,7 @@ fmt.Println("Total sms balance: ", balance.TotalSMS)
 ### Send Sms
 
 ```
-sms, err := n.SendSMS(message, to, from, nalo.Delivery_Active, nalo.MessageType_PlainTextISO)
+sms, err := n.SendSMS("Hello, there", "233XXXXXXXXX", "NALO", nalo.Delivery_Active, nalo.MessageType_PlainTextISO)
 if err != nil {
   log.Fatalf("Error sending sms: %v", err)
 }
